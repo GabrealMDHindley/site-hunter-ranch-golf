@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #0b100d;
+  --surface: #131a15;
+  --raised: #1b241d;
+  --paper: #f2efe6;
+  --muted: #a8b0a4;
+  --gold: #c9a227;
+  --fairway: #3e7c4f;
+  --timber: #7c4a32;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--ink);
+  color: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.label {
+  @apply text-xs font-semibold uppercase tracking-[0.22em] text-gold;
+}
+
+.btn-gold {
+  @apply inline-flex items-center justify-center rounded-full bg-gold px-7 py-3 text-sm font-semibold uppercase tracking-wider text-ink transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center rounded-full border border-paper/30 px-7 py-3 text-sm font-semibold uppercase tracking-wider text-paper transition hover:border-gold hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
+}
+
+.rate-table th {
+  @apply border-b border-paper/15 px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.16em] text-muted;
+}
+
+.rate-table td {
+  @apply border-b border-paper/10 px-4 py-3 text-sm;
+}
+
+.rate-table td.num {
+  @apply text-right font-semibold tabular-nums text-gold;
+}
